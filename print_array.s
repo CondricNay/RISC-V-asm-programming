@@ -13,13 +13,14 @@ main:
     
 print_array:
     addi t0, x0, 0  # let the i value be in t0
+
 loop1:
     bge t0, a1, exit1
     slli t1, t0, 2  # t1 has i*4 value
     add t2 , t1, a0 
     lw t3, 0(t2)    # t3 has value of A[i]
     
-    #print A[i]
+    # print A[i]
     
     # save a0 and a1 on the stack; caller save as ecall realizes that a0 and a1 needed after the call
     addi sp, sp, -8
